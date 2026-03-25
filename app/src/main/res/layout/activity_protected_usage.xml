@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/usage_screen_bg"
+    android:background="?android:attr/colorBackground"
     tools:context=".ProtectedUsageActivity">
 
     <com.google.android.material.appbar.AppBarLayout
@@ -18,7 +18,7 @@
             android:layout_width="match_parent"
             android:layout_height="?attr/actionBarSize"
             app:title="@string/usage_title"
-            app:titleTextColor="@color/white" />
+            app:titleTextColor="?attr/colorOnPrimary" />
 
         <TextView
             android:id="@+id/usage_help"
@@ -28,7 +28,8 @@
             android:paddingStart="16dp"
             android:paddingEnd="16dp"
             android:text="@string/usage_subtitle"
-            android:textColor="@color/usage_toolbar_subtitle"
+            android:textColor="?attr/colorOnPrimary"
+            android:alpha="0.92"
             android:textSize="15sp" />
 
         <TextView
@@ -40,7 +41,7 @@
             android:paddingTop="4dp"
             android:paddingBottom="10dp"
             android:text="@string/usage_period_hint_today"
-            android:textColor="@color/white"
+            android:textColor="?attr/colorOnPrimary"
             android:textSize="16sp"
             android:textStyle="bold" />
 
@@ -49,11 +50,11 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:background="@android:color/transparent"
-            app:tabIndicatorColor="@color/white"
+            app:tabIndicatorColor="?attr/colorOnPrimary"
             app:tabIndicatorHeight="3dp"
             app:tabMode="fixed"
             app:tabRippleColor="@color/usage_tab_ripple"
-            app:tabSelectedTextColor="@color/white"
+            app:tabSelectedTextColor="?attr/colorOnPrimary"
             app:tabTextAppearance="@style/TextAppearance.Usage.Tab"
             app:tabTextColor="@color/usage_tab_unselected" />
     </com.google.android.material.appbar.AppBarLayout>
@@ -86,7 +87,7 @@
                 android:lineSpacingMultiplier="1.2"
                 android:paddingHorizontal="28dp"
                 android:paddingVertical="48dp"
-                android:textColor="@color/purple_700"
+                android:textColor="?attr/colorPrimary"
                 android:textSize="17sp"
                 android:visibility="gone"
                 tools:text="Empty"
@@ -101,10 +102,10 @@
         android:layout_gravity="bottom"
         android:layout_margin="16dp"
         android:visibility="gone"
-        app:cardBackgroundColor="@color/white"
+        app:cardBackgroundColor="?attr/colorSurface"
         app:cardCornerRadius="16dp"
         app:cardElevation="6dp"
-        app:strokeColor="@color/purple_200"
+        app:strokeColor="?attr/reelCardStrokeColor"
         app:strokeWidth="1dp"
         tools:visibility="visible">
 
@@ -118,7 +119,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="@string/usage_permission_title"
-                android:textColor="@color/purple_700"
+                android:textColor="?attr/colorPrimary"
                 android:textSize="20sp"
                 android:textStyle="bold" />
 
@@ -128,7 +129,7 @@
                 android:layout_marginTop="8dp"
                 android:lineSpacingMultiplier="1.2"
                 android:text="@string/usage_permission_body"
-                android:textColor="@color/friction_text_primary"
+                android:textColor="?attr/colorOnSurface"
                 android:textSize="16sp" />
 
             <com.google.android.material.button.MaterialButton

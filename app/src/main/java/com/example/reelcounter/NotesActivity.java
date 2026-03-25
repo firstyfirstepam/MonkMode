@@ -5,7 +5,6 @@ import android.view.View;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
-import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
@@ -20,7 +19,7 @@ import java.util.List;
 /**
  * Create and delete custom regret/reminder notes shown randomly on the friction screen.
  */
-public class NotesActivity extends AppCompatActivity implements NotesAdapter.Listener {
+public class NotesActivity extends BaseThemedActivity implements NotesAdapter.Listener {
 
     private PreferencesManager preferencesManager;
     private NotesAdapter adapter;

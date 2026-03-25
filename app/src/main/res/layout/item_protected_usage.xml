@@ -6,10 +6,10 @@
     android:layout_height="wrap_content"
     android:layout_marginHorizontal="16dp"
     android:layout_marginBottom="10dp"
-    app:cardBackgroundColor="@color/usage_card_surface"
+    app:cardBackgroundColor="?attr/colorSurface"
     app:cardCornerRadius="16dp"
     app:cardElevation="2dp"
-    app:strokeColor="@color/usage_card_stroke"
+    app:strokeColor="?attr/reelCardStrokeColor"
     app:strokeWidth="1dp">
 
     <LinearLayout
@@ -21,8 +21,8 @@
 
         <ImageView
             android:id="@+id/usage_app_icon"
-            android:layout_width="48dp"
-            android:layout_height="48dp"
+            android:layout_width="52dp"
+            android:layout_height="52dp"
             android:contentDescription="@null"
             tools:src="@mipmap/ic_launcher" />
 
@@ -37,18 +37,20 @@
                 android:id="@+id/usage_app_title"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:textAppearance="?attr/textAppearanceTitleMedium"
-                android:textColor="@color/purple_700"
+                android:textColor="?attr/colorPrimary"
+                android:textSize="20sp"
+                android:textStyle="bold"
                 tools:text="App name" />
 
             <TextView
                 android:id="@+id/usage_time"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="2dp"
-                android:textAppearance="?attr/textAppearanceBodyMedium"
-                android:textColor="@color/usage_text_secondary"
-                tools:text="2h 15m foreground" />
+                android:layout_marginTop="4dp"
+                android:textColor="?android:attr/textColorSecondary"
+                android:textSize="17sp"
+                android:textStyle="bold"
+                tools:text="16 min" />
         </LinearLayout>
 
         <TextView
@@ -56,10 +58,12 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:background="@drawable/bg_usage_opens_badge"
-            android:paddingHorizontal="12dp"
-            android:paddingVertical="6dp"
-            android:textAppearance="?attr/textAppearanceLabelLarge"
-            android:textColor="@color/white"
-            tools:text="5 opens" />
+            android:paddingHorizontal="14dp"
+            android:paddingVertical="8dp"
+            android:textColor="?attr/colorOnPrimary"
+            app:backgroundTint="?attr/colorPrimary"
+            android:textSize="15sp"
+            android:textStyle="bold"
+            tools:text="15 opens" />
     </LinearLayout>
 </com.google.android.material.card.MaterialCardView>

@@ -37,6 +37,12 @@ public final class PreferencesManager {
     private static final String KEY_PUZZLE_ENABLED = "puzzle_enabled";
     private static final String KEY_COUNTDOWN_SECONDS = "countdown_seconds";
     private static final String KEY_ACCESSIBILITY_GUARD = "accessibility_guard_enabled";
+    private static final String KEY_APP_THEME = "app_theme_id";
+
+    /** @see #getAppThemeId() */
+    public static final String THEME_PURPLE_LIGHT = "purple_light";
+    public static final String THEME_GLASS_SUN = "glass_sun";
+    public static final String THEME_VIOLET_NIGHT = "violet_night";
 
     private static final int MAX_LOG_ENTRIES = 2000;
 
@@ -117,6 +123,29 @@ public final class PreferencesManager {
 
     public void setAccessibilityGuardEnabled(boolean enabled) {
         prefs.edit().putBoolean(KEY_ACCESSIBILITY_GUARD, enabled).apply();
+    }
+
+    /**
+     * Persisted visual theme; applied in {@link com.example.reelcounter.theme.ThemeApplier}.
+     */
+    @NonNull
+    public String getAppThemeId() {
+        String id = prefs.getString(KEY_APP_THEME, THEME_PURPLE_LIGHT);
+        if (id == null || id.isEmpty()) {
+            return THEME_PURPLE_LIGHT;
+        }
+        if (THEME_GLASS_SUN.equals(id) || THEME_VIOLET_NIGHT.equals(id)) {
+            return id;
+        }
+        return THEME_PURPLE_LIGHT;
+    }
+
+    public void setAppThemeId(@NonNull String themeId) {
+        String id = themeId;
+        if (!THEME_PURPLE_LIGHT.equals(id) && !THEME_GLASS_SUN.equals(id) && !THEME_VIOLET_NIGHT.equals(id)) {
+            id = THEME_PURPLE_LIGHT;
+        }
+        prefs.edit().putString(KEY_APP_THEME, id).apply();
     }
 
     @NonNull

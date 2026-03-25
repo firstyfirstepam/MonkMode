@@ -22,4 +22,16 @@
     <color name="usage_toolbar_subtitle">#F5F5F5</color>
     <color name="usage_tab_unselected">#B3FFFFFF</color>
     <color name="usage_tab_ripple">#40FFFFFF</color>
+
+    <!-- Glass “Sun” accents (toolbar / chips feel) -->
+    <color name="theme_glass_primary">#FFF9A825</color>
+    <color name="theme_glass_primary_dark">#FFF57F17</color>
+    <color name="theme_glass_on_surface">#FF3E2723</color>
+
+    <!-- Violet night (toolbar uses a deep purple so white/chrome stays readable) -->
+    <color name="theme_violet_bg">#FF0A0714</color>
+    <color name="theme_violet_surface">#FF1C1630</color>
+    <color name="theme_violet_primary">#FF6A1B9A</color>
+    <color name="theme_violet_primary_dark">#FF4A148C</color>
+    <color name="theme_violet_accent_soft">#FFCE93D8</color>
 </resources>

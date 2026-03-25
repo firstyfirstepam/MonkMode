@@ -12,7 +12,6 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.annotation.NonNull;
-import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
@@ -39,7 +38,7 @@ import java.util.Set;
  * airtight enforcement.
  * </p>
  */
-public class LauncherActivity extends AppCompatActivity implements AppGridAdapter.Listener {
+public class LauncherActivity extends BaseThemedActivity implements AppGridAdapter.Listener {
 
     private PreferencesManager preferencesManager;
     private AppRepository appRepository;

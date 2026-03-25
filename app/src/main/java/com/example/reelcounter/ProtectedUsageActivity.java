@@ -1,6 +1,7 @@
 package com.example.reelcounter;
 
 import android.content.Intent;
+import android.content.res.TypedArray;
 import android.net.Uri;
 import android.os.Build;
 import android.os.Bundle;
@@ -8,7 +9,6 @@ import android.provider.Settings;
 import android.view.View;
 import android.widget.TextView;
 
-import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.DefaultItemAnimator;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
@@ -33,7 +33,7 @@ import java.util.concurrent.Executors;
  * Shows Android {@link android.app.usage.UsageStatsManager} data for strict-mode packages only:
  * foreground duration and approximate open counts per window (today / 7d / 30d).
  */
-public class ProtectedUsageActivity extends AppCompatActivity {
+public class ProtectedUsageActivity extends BaseThemedActivity {
 
     private final ExecutorService io = Executors.newSingleThreadExecutor();
 
@@ -77,8 +77,10 @@ public class ProtectedUsageActivity extends AppCompatActivity {
             ((DefaultItemAnimator) animator).setSupportsChangeAnimations(true);
         }
 
-        int purple = getResources().getColor(R.color.purple_500, getTheme());
-        refresh.setColorSchemeColors(purple);
+        TypedArray a = obtainStyledAttributes(new int[]{androidx.appcompat.R.attr.colorPrimary});
+        int primary = a.getColor(0, 0xFF6200EE);
+        a.recycle();
+        refresh.setColorSchemeColors(primary);
         refresh.setProgressBackgroundColorSchemeColor(getResources().getColor(R.color.white, getTheme()));
         refresh.setOnRefreshListener(this::reload);
 

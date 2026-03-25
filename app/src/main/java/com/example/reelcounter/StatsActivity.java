@@ -7,8 +7,6 @@ import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
-import androidx.appcompat.app.AppCompatActivity;
-
 import com.example.reelcounter.data.FrictionStats;
 import com.example.reelcounter.data.PreferencesManager;
 import com.google.android.material.appbar.MaterialToolbar;
@@ -16,7 +14,7 @@ import com.google.android.material.appbar.MaterialToolbar;
 /**
  * Simple readout of friction metrics derived from stored launch logs.
  */
-public class StatsActivity extends AppCompatActivity {
+public class StatsActivity extends BaseThemedActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

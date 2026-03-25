@@ -11,8 +11,6 @@ import android.widget.Toast;
 import androidx.activity.OnBackPressedCallback;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
-import androidx.appcompat.app.AppCompatActivity;
-
 import com.example.reelcounter.data.PreferencesManager;
 import com.example.reelcounter.guard.LaunchGuardManager;
 import com.example.reelcounter.model.LaunchLogEntry;
@@ -39,7 +37,7 @@ import java.util.Random;
  * boundary.
  * </p>
  */
-public class FrictionActivity extends AppCompatActivity {
+public class FrictionActivity extends BaseThemedActivity {
 
     public static final String EXTRA_TARGET_PACKAGE = "extra_target_package";
     public static final String EXTRA_LAUNCH_SOURCE = "extra_launch_source";

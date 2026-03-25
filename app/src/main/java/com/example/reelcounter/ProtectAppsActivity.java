@@ -3,7 +3,6 @@ package com.example.reelcounter;
 import android.content.pm.PackageManager;
 import android.os.Bundle;
 
-import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
@@ -15,7 +14,7 @@ import com.google.android.material.appbar.MaterialToolbar;
 /**
  * Screen to pick which apps use strict mode (friction) before opening from this launcher.
  */
-public class ProtectAppsActivity extends AppCompatActivity {
+public class ProtectAppsActivity extends BaseThemedActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

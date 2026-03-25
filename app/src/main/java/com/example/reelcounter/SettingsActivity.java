@@ -7,7 +7,7 @@ import android.provider.Settings;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import androidx.appcompat.app.AppCompatActivity;
+import android.widget.RadioGroup;
 
 import com.example.reelcounter.data.PreferencesManager;
 import com.google.android.material.appbar.MaterialToolbar;
@@ -18,7 +18,7 @@ import com.google.android.material.textfield.TextInputEditText;
 /**
  * Friction toggles, accessibility guard preference, and links to protected apps / notes.
  */
-public class SettingsActivity extends AppCompatActivity {
+public class SettingsActivity extends BaseThemedActivity {
 
     private PreferencesManager prefs;
     private SwitchMaterial guardSwitch;
@@ -37,6 +37,8 @@ public class SettingsActivity extends AppCompatActivity {
             getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         }
         toolbar.setNavigationOnClickListener(v -> getOnBackPressedDispatcher().onBackPressed());
+
+        bindThemePicker();
 
         guardSwitch = findViewById(R.id.switch_accessibility_guard);
         accessibilityStatus = findViewById(R.id.accessibility_status_text);
@@ -90,6 +92,33 @@ public class SettingsActivity extends AppCompatActivity {
                 startActivity(new Intent(this, NotesActivity.class)));
 
         bindGuardUi();
+    }
+
+    private void bindThemePicker() {
+        RadioGroup group = findViewById(R.id.theme_radio_group);
+        String current = prefs.getAppThemeId();
+        group.setOnCheckedChangeListener(null);
+        if (PreferencesManager.THEME_GLASS_SUN.equals(current)) {
+            group.check(R.id.theme_glass_sun);
+        } else if (PreferencesManager.THEME_VIOLET_NIGHT.equals(current)) {
+            group.check(R.id.theme_violet_night);
+        } else {
+            group.check(R.id.theme_purple);
+        }
+        group.setOnCheckedChangeListener((g, checkedId) -> {
+            String next;
+            if (checkedId == R.id.theme_glass_sun) {
+                next = PreferencesManager.THEME_GLASS_SUN;
+            } else if (checkedId == R.id.theme_violet_night) {
+                next = PreferencesManager.THEME_VIOLET_NIGHT;
+            } else {
+                next = PreferencesManager.THEME_PURPLE_LIGHT;
+            }
+            if (!next.equals(prefs.getAppThemeId())) {
+                prefs.setAppThemeId(next);
+                recreate();
+            }
+        });
     }
 
     @Override

@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/friction_bg"
+    android:background="?android:attr/colorBackground"
     tools:context=".FrictionActivity">
 
     <com.google.android.material.appbar.AppBarLayout
@@ -52,7 +52,7 @@
                     android:layout_marginStart="16dp"
                     android:layout_weight="1"
                     android:textAppearance="?attr/textAppearanceHeadlineMedium"
-                    android:textColor="@color/friction_text_primary"
+                    android:textColor="?attr/colorOnSurface"
                     android:textSize="24sp"
                     tools:text="Target app" />
             </LinearLayout>
@@ -61,10 +61,10 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="18dp"
-                app:cardBackgroundColor="@color/friction_card"
+                app:cardBackgroundColor="?attr/colorSurface"
                 app:cardCornerRadius="12dp"
                 app:cardElevation="2dp"
-                app:strokeColor="#33000000"
+                app:strokeColor="?attr/reelCardStrokeColor"
                 app:strokeWidth="1dp">
 
                 <LinearLayout
@@ -78,7 +78,7 @@
                         android:layout_height="wrap_content"
                         android:text="@string/friction_reminder_heading"
                         android:textAppearance="?attr/textAppearanceTitleMedium"
-                        android:textColor="@color/friction_muted" />
+                        android:textColor="?android:attr/textColorSecondary" />
 
                     <TextView
                         android:id="@+id/reminder_text"
@@ -87,7 +87,7 @@
                         android:layout_marginTop="10dp"
                         android:lineSpacingMultiplier="1.15"
                         android:textAppearance="?attr/textAppearanceBodyLarge"
-                        android:textColor="@color/friction_text_primary"
+                        android:textColor="?attr/colorOnSurface"
                         android:textSize="18sp"
                         tools:text="Reminder sample" />
                 </LinearLayout>
@@ -99,7 +99,7 @@
                 android:layout_marginTop="18dp"
                 android:text="@string/friction_reason_chips_label"
                 android:textAppearance="?attr/textAppearanceTitleSmall"
-                android:textColor="@color/friction_muted" />
+                android:textColor="?android:attr/textColorSecondary" />
 
             <HorizontalScrollView
                 android:layout_width="match_parent"
@@ -157,15 +157,15 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="12dp"
                 android:hint="@string/friction_detail_hint"
-                app:boxStrokeColor="@color/purple_500"
-                app:hintTextColor="@color/friction_muted">
+                app:boxStrokeColor="?attr/colorPrimary"
+                app:hintTextColor="?android:attr/textColorSecondary">
 
                 <com.google.android.material.textfield.TextInputEditText
                     android:id="@+id/reason_input"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:inputType="textCapSentences|textMultiLine"
-                    android:textColor="@color/friction_text_primary"
+                    android:textColor="?attr/colorOnSurface"
                     android:textSize="18sp" />
             </com.google.android.material.textfield.TextInputLayout>
 
@@ -174,10 +174,10 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="18dp"
-                app:cardBackgroundColor="@color/friction_card"
+                app:cardBackgroundColor="?attr/colorSurface"
                 app:cardCornerRadius="12dp"
                 app:cardElevation="2dp"
-                app:strokeColor="#33000000"
+                app:strokeColor="?attr/reelCardStrokeColor"
                 app:strokeWidth="1dp">
 
                 <TextView
@@ -186,7 +186,7 @@
                     android:layout_height="wrap_content"
                     android:padding="18dp"
                     android:textAppearance="?attr/textAppearanceHeadlineSmall"
-                    android:textColor="@color/friction_text_primary"
+                    android:textColor="?attr/colorOnSurface"
                     android:textSize="22sp"
                     tools:text="Wait 7 s" />
             </com.google.android.material.card.MaterialCardView>
@@ -196,10 +196,10 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="18dp"
-                app:cardBackgroundColor="@color/friction_card"
+                app:cardBackgroundColor="?attr/colorSurface"
                 app:cardCornerRadius="12dp"
                 app:cardElevation="2dp"
-                app:strokeColor="#33000000"
+                app:strokeColor="?attr/reelCardStrokeColor"
                 app:strokeWidth="1dp">
 
                 <LinearLayout
@@ -213,7 +213,7 @@
                         android:layout_height="wrap_content"
                         android:text="@string/friction_puzzle_heading"
                         android:textAppearance="?attr/textAppearanceTitleMedium"
-                        android:textColor="@color/friction_muted" />
+                        android:textColor="?android:attr/textColorSecondary" />
 
                     <TextView
                         android:id="@+id/puzzle_prompt"
@@ -221,7 +221,7 @@
                         android:layout_height="wrap_content"
                         android:layout_marginTop="10dp"
                         android:textAppearance="?attr/textAppearanceHeadlineMedium"
-                        android:textColor="@color/friction_text_primary"
+                        android:textColor="?attr/colorOnSurface"
                         android:textSize="28sp"
                         tools:text="7 + 5 = ?" />
 
@@ -231,15 +231,15 @@
                         android:layout_height="wrap_content"
                         android:layout_marginTop="12dp"
                         android:hint="@string/friction_puzzle_answer_hint"
-                        app:boxStrokeColor="@color/purple_500"
-                        app:hintTextColor="@color/friction_muted">
+                        app:boxStrokeColor="?attr/colorPrimary"
+                        app:hintTextColor="?android:attr/textColorSecondary">
 
                         <com.google.android.material.textfield.TextInputEditText
                             android:id="@+id/puzzle_answer"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:inputType="number"
-                            android:textColor="@color/friction_text_primary"
+                            android:textColor="?attr/colorOnSurface"
                             android:textSize="20sp" />
                     </com.google.android.material.textfield.TextInputLayout>
 
@@ -251,7 +251,7 @@
                         android:layout_marginTop="12dp"
                         android:text="@string/friction_puzzle_verify"
                         android:textSize="16sp"
-                        app:strokeColor="@color/purple_500" />
+                        app:strokeColor="?attr/colorPrimary" />
                 </LinearLayout>
             </com.google.android.material.card.MaterialCardView>
 
